@@ -1,29 +1,37 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import About from './pages/About';
+import Projects from './pages/Projects';
+import Contact from './pages/Contact';
 
 function App() {
   return (
-    <div className="relative min-h-screen">
-      {/* Video Background */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="fixed inset-0 w-full h-full object-cover -z-10"
-      >
-        <source src="/stars.mp4" type="video/mp4" />
-      </video>
+    <Router>
+      <div className="relative">
+        {/* Video Background */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="fixed inset-0 w-full h-full object-cover -z-10"
+        >
+          <source src="/stars.mp4" type="video/mp4" />
+        </video>
 
-      {/* Navigation */}
-      <Navbar />
+        {/* Navigation - Fixed */}
+        <Navbar />
 
-      {/* Content */}
-      <div className="relative z-10 h-screen flex items-center justify-center">
-        <h1 className="text-8xl font-bold text-white drop-shadow-2xl">
-          Welcome
-        </h1>
+        {/* Routes */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
 }
 
