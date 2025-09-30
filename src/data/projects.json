@@ -1,0 +1,53 @@
+{
+  "projects": {
+    "Dvffrnt": {
+      "id": "dvffrnt",
+      "title": "Dvffrnt",
+      "heading": "Full Stack E-commerce Platform for Black-owned Businesses",
+      "description": "Full-stack e-commerce platform for Black-owned clothing and self-care brands. Features AI-powered seller dashboard with natural language agents for inventory management, order tracking, and analytics.",
+      "bullets": [
+        "Built with React Native for cross-platform mobile experience",
+        "Integrated AI-powered seller dashboard with LangChain and Qdrant",
+        "Implemented real-time inventory management and order tracking",
+        "Designed responsive web interface with modern UI/UX"
+      ],
+      "technologies": ["React", "React Native", "TypeScript", "Tailwind", "Prisma", "Node.js", "LangChain", "Qdrant"],
+      "category": "Full Stack",
+      "featured": true,
+      "image": "/src/assets/projects/dvffrnt/screenshots/MobileHomeScreen.png",
+      "screenshots": [
+        "/src/assets/projects/dvffrnt/screenshots/WebHomeScreen.png"
+      ],
+      "liveUrl": "https://dvffrnt.com",
+      "githubUrl": "https://github.com/yourusername/dvffrnt",
+      "year": 2024,
+      "gradient": "from-purple-600 via-pink-500 to-rose-500",
+      "accentColor": "pink-500"
+    },
+    "Skoolio": {
+      "id": "skoolio",
+      "title": "Skoolio",
+      "heading": "AI-powered Quiz Generation Platform for Educators and Students",
+      "description": "AI-powered quiz generation platform for educators and students",
+      "bullets": [
+        "Leveraged OpenAI API for intelligent quiz generation",
+        "Built responsive frontend with React and TypeScript",
+        "Implemented secure authentication and user management",
+        "Created intuitive interface for seamless quiz creation"
+      ],
+      "technologies": ["React", "TypeScript", "Node.js", "OpenAI API", "Prisma"],
+      "category": "Full Stack",
+      "featured": true,
+      "image": "/src/assets/projects/skoolio/hero.png",
+      "screenshots": [
+        "/src/assets/projects/skoolio/screenshots/quiz.png",
+        "/src/assets/projects/skoolio/screenshots/landing.png"
+      ],
+      "liveUrl": "https://skoolio.com",
+      "githubUrl": "https://github.com/yourusername/skoolio",
+      "year": 2024,
+      "gradient": "from-blue-600 via-cyan-500 to-teal-500",
+      "accentColor": "blue-500"
+    }
+  }
+}

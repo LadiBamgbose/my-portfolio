@@ -1,7 +1,12 @@
 import { ArrowRight } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 // Modern transparent rounded navbar component
 const Navbar = () => {
+  const location = useLocation();
+  
+  const isActive = (path: string) => location.pathname === path;
+  
   return (
     <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-7xl px-6">
       <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-14 py-4 shadow-lg">
@@ -24,36 +29,44 @@ const Navbar = () => {
           <div className="flex-1 flex justify-center">
             <ul className="flex items-center space-x-12 text-white font-medium">
               <li>
-                <a 
-                  href="#home" 
-                  className="hover:text-blue-300 transition-colors duration-200 cursor-pointer whitespace-nowrap text-lg"
+                <Link 
+                  to="/" 
+                  className={`hover:text-blue-300 transition-colors duration-200 cursor-pointer whitespace-nowrap text-lg ${
+                    isActive('/') ? 'text-blue-300' : ''
+                  }`}
                 >
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a 
-                  href="#about" 
-                  className="hover:text-blue-300 transition-colors duration-200 cursor-pointer whitespace-nowrap text-lg"
+                <Link 
+                  to="/about" 
+                  className={`hover:text-blue-300 transition-colors duration-200 cursor-pointer whitespace-nowrap text-lg ${
+                    isActive('/about') ? 'text-blue-300' : ''
+                  }`}
                 >
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a 
-                  href="#projects" 
-                  className="hover:text-blue-300 transition-colors duration-200 cursor-pointer whitespace-nowrap text-lg"
+                <Link 
+                  to="/projects" 
+                  className={`hover:text-blue-300 transition-colors duration-200 cursor-pointer whitespace-nowrap text-lg ${
+                    isActive('/projects') ? 'text-blue-300' : ''
+                  }`}
                 >
                   Projects
-                </a>
+                </Link>
               </li>
               <li>
-                <a 
-                  href="#contact" 
-                  className="hover:text-blue-300 transition-colors duration-200 cursor-pointer whitespace-nowrap text-lg"
+                <Link 
+                  to="/contact" 
+                  className={`hover:text-blue-300 transition-colors duration-200 cursor-pointer whitespace-nowrap text-lg ${
+                    isActive('/contact') ? 'text-blue-300' : ''
+                  }`}
                 >
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
