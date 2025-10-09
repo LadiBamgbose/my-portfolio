@@ -1,61 +1,40 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import ProjectImageCard from './ProjectImageCard';
 import ProjectDetails from './ProjectDetails';
 import projectsData from '../data/projects.json';
 
-// Projects section with scroll animations
 const Projects = () => {
-  const [activeProjectIndex, setActiveProjectIndex] = useState(0);
-  
-  // Convert projects object to array for mapping
   const projectsArray = Object.values(projectsData.projects);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  
+  // Track scroll progress of the projects container
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
 
-  // Create refs for each project card
-  const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
+  // Map scroll progress to project index
+  const activeProjectIndex = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [0, projectsArray.length - 1]
+  );
 
-  // Initialize refs array
+  // Update active index when scroll changes
   useEffect(() => {
-    projectRefs.current = projectRefs.current.slice(0, projectsArray.length);
-  }, [projectsArray.length]);
-
-  // Use Intersection Observer to track which project is in view
-  useEffect(() => {
-    const observers: IntersectionObserver[] = [];
-    
-    projectRefs.current.forEach((ref, index) => {
-      if (!ref) return;
-      
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            // Check if project is in the middle 50% of viewport
-            if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
-              setActiveProjectIndex(index);
-            }
-          });
-        },
-        {
-          threshold: [0, 0.5, 1],
-          rootMargin: '-20% 0px -30% 0px'
-        }
-      );
-      
-      observer.observe(ref);
-      observers.push(observer);
+    return activeProjectIndex.on("change", (latest) => {
+      setActiveIndex(Math.round(latest));
     });
-
-    return () => {
-      observers.forEach(observer => observer.disconnect());
-    };
-  }, []);
+  }, [activeProjectIndex]);
 
   return (
-    <section className="bg-black/20 backdrop-blur-sm py-20 relative">
+    <section className="bg-black/20 backdrop-blur-sm pt-6 relative">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-20"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -63,38 +42,39 @@ const Projects = () => {
         >
           <h2 className="text-6xl md:text-7xl font-bold mb-4">
             <span className="bg-gradient-to-r from-blue-500 via-cyan-400 to-purple-500 bg-clip-text text-transparent animate-gradient-shift bg-[length:200%_200%]">
-              My Projects
+              Curated <span className="italic">work</span>
             </span>
           </h2>
         </motion.div>
 
-        {/* Two-column layout */}
-        <div className="flex gap-12 items-start relative">
-          {/* Left column - Project Image Cards (scrollable) */}
-          <div className="flex-1 max-w-4xl">
-            <div className="space-y-0">
-              {projectsArray.map((project, index) => (
-                <div
-                  key={project.id}
-                  ref={(el) => {
-                    projectRefs.current[index] = el;
-                  }}
-                >
-                  <ProjectImageCard 
-                    project={project} 
-                    index={index}
-                  />
-                </div>
-              ))}
-            </div>
+        {/* Two column layout */}
+        <div ref={containerRef} className="flex gap-16 relative pt-12">
+          {/* Left column - Project Image Cards */}
+          <div className="flex-1 max-w-3xl space-y-8">
+            {projectsArray.map((project, index) => (
+              <ProjectImageCard 
+                key={project.id}
+                project={project} 
+                index={index}
+              />
+            ))}
           </div>
 
           {/* Right column - Project Details (sticky) */}
-          <div className="flex-shrink-0 w-[500px] sticky top-32 self-start">
-            <ProjectDetails 
-              project={projectsArray[activeProjectIndex]} 
-              isActive={true}
-            />
+          <div className="flex-shrink-0 w-[500px]">
+            <div className="sticky top-36">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={projectsArray[activeIndex].id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                >
+                  <ProjectDetails project={projectsArray[activeIndex]} />
+                </motion.div>
+              </AnimatePresence>
+            </div>
           </div>
         </div>
       </div>

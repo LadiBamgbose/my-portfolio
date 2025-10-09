@@ -48,7 +48,7 @@ const Navbar = () => {
                   About
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link 
                   to="/projects" 
                   className={`hover:text-blue-300 transition-colors duration-200 cursor-pointer whitespace-nowrap text-lg ${
@@ -67,19 +67,19 @@ const Navbar = () => {
                 >
                   Contact
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 
           {/* Resume Button */}
           <div className="flex-shrink-0">
-            <a 
-              href="#resume" 
+            <Link 
+              to="/resume" 
               className="bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500 text-white font-semibold px-8 py-3 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl cursor-pointer inline-flex items-center space-x-2 whitespace-nowrap text-lg"
             >
               <span>Resume</span>
               <ArrowRight className="w-8 h-6" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>

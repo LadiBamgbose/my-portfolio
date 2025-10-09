@@ -16,7 +16,7 @@ interface ProjectImageCardProps {
 const ProjectImageCard = ({ project, index }: ProjectImageCardProps) => {
   return (
     <motion.div
-      className="w-full max-w-4xl mx-auto mb-32"
+      className="w-full max-w-4xl mx-auto"
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: index * 0.2 }}
