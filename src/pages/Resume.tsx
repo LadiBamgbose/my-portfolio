@@ -6,7 +6,7 @@ const Resume = () => {
         <div className="p-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-3xl">
           <div className="rounded-3xl overflow-hidden bg-white">
             <img
-              src="/resume.png"
+              src="/images/resume.png"
               alt="Resume"
               className="w-full h-auto"
             />

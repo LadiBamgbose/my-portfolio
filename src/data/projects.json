@@ -14,9 +14,9 @@
       "technologies": ["React", "React Native", "TypeScript", "Tailwind", "Prisma", "Node.js", "LangChain", "Qdrant"],
       "category": "Full Stack",
       "featured": true,
-      "image": "/src/assets/projects/dvffrnt/screenshots/MobileHomeScreen.png",
+      "image": "/images/projects/dvffrnt/screenshots/MobileHomeScreen.png",
       "screenshots": [
-        "/src/assets/projects/dvffrnt/screenshots/WebHomeScreen.png"
+        "/images/projects/dvffrnt/screenshots/WebHomeScreen.png"
       ],
       "liveUrl": "https://dvffrnt.com",
       "githubUrl": "https://github.com/yourusername/dvffrnt",
@@ -38,9 +38,9 @@
       "technologies": ["React", "TypeScript", "Node.js", "OpenAI API", "Prisma"],
       "category": "Full Stack",
       "featured": true,
-      "image": "/src/assets/projects/skoolio/screenshots/HomeScreen.png",
+      "image": "/images/projects/skoolio/screenshots/HomeScreen.png",
       "screenshots": [
-        "/src/assets/projects/skoolio/screenshots/HomeScreen.png"
+        "/images/projects/skoolio/screenshots/HomeScreen.png"
       ],
       "liveUrl": "https://skoolio.app",
       "githubUrl": "https://github.com/yourusername/skoolio",
