@@ -14,7 +14,7 @@ const Hero = () => {
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.3]);
   const y = useTransform(scrollYProgress, [0, 0.5], [0, -100]);
 
-  const { displayText: welcomeText, isComplete, isDeleting } = useInfiniteTypewriter({ 
+  const { displayText: welcomeText, isComplete } = useInfiniteTypewriter({ 
     text: "Welcome,", 
     typeSpeed: 200,
     deleteSpeed: 150,
