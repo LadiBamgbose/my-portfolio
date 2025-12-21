@@ -42,7 +42,7 @@
       "screenshots": [
         "/src/assets/projects/skoolio/screenshots/HomeScreen.png"
       ],
-      "liveUrl": "https://skoolio.com",
+      "liveUrl": "https://skoolio.app",
       "githubUrl": "https://github.com/yourusername/skoolio",
       "year": 2024,
       "gradient": "from-blue-600 via-cyan-500 to-teal-500",

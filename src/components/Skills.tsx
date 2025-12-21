@@ -28,7 +28,7 @@ import {
   SiOpenai,
   SiAnthropic
 } from 'react-icons/si';
-import { Brain, Sparkles } from 'lucide-react';
+import { Brain, Sparkles, Link2, Workflow } from 'lucide-react';
 
 const skillCategories = [
   {
@@ -87,7 +87,9 @@ const skillCategories = [
       { name: 'ChatGPT', icon: SiOpenai, color: '#10A37F' },
       { name: 'Claude Code', icon: SiAnthropic, color: '#D97757' },
       { name: 'Cursor AI', icon: Sparkles, color: '#A855F7' },
-      { name: 'GitHub Copilot', icon: Brain, color: '#7B68EE' }
+      { name: 'GitHub Copilot', icon: Brain, color: '#7B68EE' },
+      { name: 'LangChain', icon: Link2, color: '#1C3C78' },
+      { name: 'CrewAI', icon: Workflow, color: '#6366F1' }
     ]
   }
 ];

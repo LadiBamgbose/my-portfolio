@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { ExternalLink } from 'lucide-react';
 
 interface ProjectDetailsProps {
   project: {
@@ -8,10 +9,21 @@ interface ProjectDetailsProps {
     bullets: string[];
     technologies: string[];
     accentColor: string;
+    liveUrl?: string;
   };
 }
 
 const ProjectDetails = ({ project }: ProjectDetailsProps) => {
+  // Extract domain from URL (e.g., "https://dvffrnt.com" -> "dvffrnt.com")
+  const getDomainFromUrl = (url: string) => {
+    try {
+      const urlObj = new URL(url);
+      return urlObj.hostname.replace('www.', '');
+    } catch {
+      return url;
+    }
+  };
+
   return (
     <div className="w-full bg-transparent rounded-2xl p-8 flex flex-col">
       {/* Accent line */}
@@ -61,7 +73,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
       </div>
       
       {/* Tech stack badges */}
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2 mb-8">
         {project.technologies.map((tech, index) => (
           <motion.div
             key={`${project.id}-tech-${tech}`}
@@ -74,6 +86,24 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
           </motion.div>
         ))}
       </div>
+      
+      {/* Live URL button */}
+      {project.liveUrl && (
+        <motion.a
+          href={project.liveUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${project.accentColor === 'pink-500' ? 'from-pink-500 to-rose-500' : 'from-blue-500 to-cyan-500'} text-white font-semibold rounded-lg hover:opacity-90 transition-opacity`}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.5 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <span>{getDomainFromUrl(project.liveUrl)}</span>
+          <ExternalLink className="w-4 h-4" />
+        </motion.a>
+      )}
     </div>
   );
 };
