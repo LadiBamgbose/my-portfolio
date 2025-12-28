@@ -7,6 +7,7 @@ interface ProjectImageCardProps {
     heading: string;
     description: string;
     image?: string;
+    video?: string;
     gradient: string;
     accentColor: string;
   };
@@ -47,10 +48,21 @@ const ProjectImageCard = ({ project, index }: ProjectImageCardProps) => {
             </div>
           </div>
           
-          {/* Black container for project image - extends to bottom */}
-          <div className="relative bg-black overflow-hidden shadow-2xl flex-1 rounded-b-3xl">
-            {project.image ? (
-              <div className="w-full h-full">
+          {/* Black container for project image/video - extends to bottom */}
+          <div className="relative bg-black overflow-hidden shadow-2xl flex-1 rounded-b-5xl flex items-center justify-center p-3">
+            {project.video ? (
+              <div className="w-full h-full max-w-full max-h-full rounded-2xl overflow-hidden">
+                <video 
+                  src={project.video} 
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover rounded-2xl"
+                />
+              </div>
+            ) : project.image ? (
+              <div className="w-full h-full max-w-full max-h-full rounded-2xl overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title}

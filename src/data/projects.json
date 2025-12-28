@@ -38,7 +38,7 @@
       "technologies": ["React", "TypeScript", "Node.js", "OpenAI API", "Prisma"],
       "category": "Full Stack",
       "featured": true,
-      "image": "/images/projects/skoolio/screenshots/HomeScreen.png",
+      "video": "/images/projects/skoolio/screenshots/skoolio.mp4",
       "screenshots": [
         "/images/projects/skoolio/screenshots/HomeScreen.png"
       ],
@@ -47,6 +47,31 @@
       "year": 2024,
       "gradient": "from-blue-600 via-cyan-500 to-teal-500",
       "accentColor": "blue-500"
+    },
+    "Employd": {
+      "id": "employd",
+      "title": "Employd",
+      "heading": "AI-Guided Resume Builder with Modern Templates",
+      "description": "AI-powered resume builder with animated UI and professional templates for creating ATS-friendly resumes.",
+      "bullets": [
+        "Built with Next.js 16 App Router and React 19",
+        "Integrated Supabase Auth for secure user authentication",
+        "Leveraged Anthropic LLM API to analyze user input and generate polished resume content",
+        "Implemented Framer Motion animations and responsive UI with Tailwind CSS",
+        "Developed FastAPI backend with SQLAlchemy for data persistence"
+      ],
+      "technologies": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "Anthropic API", "FastAPI", "SQLAlchemy"],
+      "category": "Full Stack",
+      "featured": true,
+      "video": "/images/projects/employd/screenshots/employd.mp4",
+      "screenshots": [
+        "/images/projects/employd/screenshots/LandingPage.png"
+      ],
+      "liveUrl": "https://employd.app",
+      "githubUrl": "https://github.com/yourusername/employd",
+      "year": 2025,
+      "gradient": "from-green-600 via-emerald-500 to-teal-500",
+      "accentColor": "green-500"
     }
   }
 }
