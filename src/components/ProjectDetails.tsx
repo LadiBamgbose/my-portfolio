@@ -8,7 +8,7 @@ interface ProjectDetailsProps {
     description: string;
     bullets: string[];
     technologies: string[];
-    accentColor: string;
+    gradient: string;
     liveUrl?: string;
   };
 }
@@ -28,7 +28,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
     <div className="w-full bg-transparent rounded-2xl p-8 flex flex-col">
       {/* Accent line */}
       <motion.div 
-        className={`w-12 h-1 bg-gradient-to-r ${project.accentColor === 'pink-500' ? 'from-pink-500 to-rose-500' : 'from-blue-500 to-cyan-500'} rounded-full mb-6`}
+        className={`w-12 h-1 bg-gradient-to-r ${project.gradient} rounded-full mb-6`}
         initial={{ width: 0 }}
         animate={{ width: 48 }}
         transition={{ duration: 0.5, delay: 0.1 }}
@@ -64,7 +64,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.3, delay: 0.25 + index * 0.05 }}
           >
-            <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${project.accentColor === 'pink-500' ? 'from-pink-500 to-rose-500' : 'from-blue-500 to-cyan-500'} mt-2 mr-3 flex-shrink-0`} />
+            <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${project.gradient} mt-2 mr-3 flex-shrink-0`} />
             <p className="text-gray-400 text-sm leading-relaxed">
               {bullet}
             </p>
@@ -93,7 +93,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
           href={project.liveUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${project.accentColor === 'pink-500' ? 'from-pink-500 to-rose-500' : 'from-blue-500 to-cyan-500'} text-white font-semibold rounded-lg hover:opacity-90 transition-opacity`}
+          className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${project.gradient} text-white font-semibold rounded-lg hover:opacity-90 transition-opacity`}
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.5 }}
