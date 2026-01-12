@@ -11,13 +11,20 @@
         "Implemented real-time inventory management and order tracking",
         "Designed responsive web interface with modern UI/UX"
       ],
-      "technologies": ["React", "React Native", "TypeScript", "Tailwind", "Prisma", "Node.js", "LangChain", "Qdrant"],
+      "technologies": [
+        "React",
+        "React Native",
+        "TypeScript",
+        "Tailwind",
+        "Prisma",
+        "Node.js",
+        "LangChain",
+        "Qdrant"
+      ],
       "category": "Full Stack",
       "featured": true,
       "image": "/images/projects/dvffrnt/screenshots/MobileHomeScreen.png",
-      "screenshots": [
-        "/images/projects/dvffrnt/screenshots/WebHomeScreen.png"
-      ],
+      "screenshots": ["/images/projects/dvffrnt/screenshots/WebHomeScreen.png"],
       "liveUrl": "https://dvffrnt.com",
       "githubUrl": "https://github.com/yourusername/dvffrnt",
       "year": 2024,
@@ -35,13 +42,17 @@
         "Implemented secure authentication and user management",
         "Created intuitive interface for seamless quiz creation"
       ],
-      "technologies": ["React", "TypeScript", "Node.js", "OpenAI API", "Prisma"],
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Node.js",
+        "OpenAI API",
+        "Prisma"
+      ],
       "category": "Full Stack",
       "featured": true,
       "video": "/images/projects/skoolio/screenshots/skoolio.mp4",
-      "screenshots": [
-        "/images/projects/skoolio/screenshots/HomeScreen.png"
-      ],
+      "screenshots": ["/images/projects/skoolio/screenshots/HomeScreen.png"],
       "liveUrl": "https://skoolio.app",
       "githubUrl": "https://github.com/yourusername/skoolio",
       "year": 2024,
@@ -60,18 +71,55 @@
         "Implemented Framer Motion animations and responsive UI with Tailwind CSS",
         "Developed FastAPI backend with SQLAlchemy for data persistence"
       ],
-      "technologies": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "Anthropic API", "FastAPI", "SQLAlchemy"],
+      "technologies": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Supabase",
+        "Anthropic API",
+        "FastAPI",
+        "SQLAlchemy"
+      ],
       "category": "Full Stack",
       "featured": true,
       "video": "/images/projects/employd/screenshots/employd.mp4",
-      "screenshots": [
-        "/images/projects/employd/screenshots/LandingPage.png"
-      ],
+      "screenshots": ["/images/projects/employd/screenshots/LandingPage.png"],
       "liveUrl": "https://employd.app",
       "githubUrl": "https://github.com/yourusername/employd",
       "year": 2025,
       "gradient": "from-green-600 via-emerald-500 to-teal-500",
       "accentColor": "green-500"
+    },
+    "event_billing": {
+      "id": "event-billing",
+      "title": "Event-Driven Usage & Billing Backend",
+      "heading": "Production-Style Metering and Billing System for AI Products",
+      "description": "Event-driven backend system designed to safely track AI usage, handle retries, and generate accurate billing. Built with a focus on durability, idempotency, and failure tolerance, similar to how real-world systems handle usage metering.",
+      "bullets": [
+        "Designed an event-driven architecture that records immutable usage events instead of mutating state directly",
+        "Implemented idempotent event ingestion to safely handle client retries and at-least-once delivery",
+        "Separated fast ingestion from asynchronous processing using background workers and a message queue",
+        "Built durable event logs that enable replay, backfills, and full auditability of usage and billing",
+        "Handled failure scenarios with retries and dead-letter queues to prevent data loss or double counting"
+      ],
+      "technologies": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "Redis",
+        "Pydantic",
+        "Docker"
+      ],
+      "category": "Backend",
+      "featured": true,
+      "image": "/images/projects/event-billing/architecture.png",
+      "screenshots": ["/images/projects/event-billing/event-flow.png"],
+      "liveUrl": null,
+      "githubUrl": "https://github.com/yourusername/event-billing",
+      "year": 2025,
+      "gradient": "from-blue-600 via-indigo-500 to-purple-500",
+      "accentColor": "indigo-500"
     }
   }
 }

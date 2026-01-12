@@ -9,7 +9,7 @@ interface ProjectDetailsProps {
     bullets: string[];
     technologies: string[];
     gradient: string;
-    liveUrl?: string;
+    liveUrl?: string | null;
   };
 }
 
